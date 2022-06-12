@@ -1,6 +1,11 @@
 type Grid = [number, number];
 
-const fromGridToKey = ([m, n]: Grid) => `${m},${n}`;
+const fromGridToKey = ([m, n]: Grid) => {
+  if (m < n) {
+    return `${m},${n}`;
+  }
+  return `${n},${m}`;
+};
 
 const gridTraveller = (
   grid: Grid,
@@ -15,18 +20,15 @@ const gridTraveller = (
     return 1;
   }
 
-  const downGrid: Grid = [gridX - 1, gridY];
-  const rightGrid: Grid = [gridX, gridY - 1];
+  const key = fromGridToKey(grid);
 
-  const downGridKey = fromGridToKey(downGrid);
-  const rightGridKey = fromGridToKey(rightGrid);
+  if (key in memo) {
+    return memo[key];
+  }
 
-  const downGridTraveller =
-    memo[downGridKey] ?? (memo[downGridKey] = gridTraveller(downGrid, memo));
-  const rightGridTraveller =
-    memo[rightGridKey] ?? (memo[rightGridKey] = gridTraveller(rightGrid, memo));
-
-  return downGridTraveller + rightGridTraveller;
+  return (memo[key] =
+    gridTraveller([gridX - 1, gridY], memo) +
+    gridTraveller([gridX, gridY - 1], memo));
 };
 
 console.log(gridTraveller([18, 18]));
