@@ -1,0 +1,24 @@
+{
+  "name": "dynamic-programming-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx ts-node-dev --respawn src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawelzysk1989/dynamic-programming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawelzysk1989/dynamic-programming/issues"
+  },
+  "homepage": "https://github.com/pawelzysk1989/dynamic-programming#readme",
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.3"
+  }
+}
