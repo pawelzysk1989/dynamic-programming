@@ -31,4 +31,4 @@ const gridTraveller = (
     gridTraveller([gridX, gridY - 1], memo));
 };
 
-// console.log(gridTraveller([18, 18]));
+console.log(gridTraveller([18, 18]));

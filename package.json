@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx ts-node-dev --respawn src"
+    "watch": "npx ts-node-dev --respawn"
   },
   "repository": {
     "type": "git",
